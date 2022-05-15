@@ -38,6 +38,8 @@ module.exports = function(){
       }
 	  if(recover.defaultQuizData) {
 		this.quiz.quizQuestionAnswers = recover.defaultQuizData.quizQuestionAnswers;
+		} else {
+			this.quiz.quizQuestionAnswers = [];
 		}
       const data = recover.data;
       switch (recover.state) {
