@@ -41,7 +41,10 @@ module.exports = function(){
   this.on("QuizStart",(event)=>{
     Object.assign(event,{
       get questionCount(){
-        return event.quizQuestionAnswers.length;
+        if (Array.isArray(event.quizQuestionAnswers)) {
+			return event.quizQuestionAnswers.length;
+		}
+		return 0;
       }
     });
     try{
